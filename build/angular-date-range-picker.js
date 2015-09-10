@@ -72,7 +72,7 @@
           _calculateRange = function() {
             var end, start;
             if ($scope.showRanged) {
-              return $scope.range = $scope.selection ? (start = $scope.selection.start.clone().startOf("month").startOf("day"), end = start.clone().add(2, "months").endOf("month").startOf("day"), moment().range(start, end)) : moment().range(moment().startOf("month").subtract(1, "month").startOf("day"), moment().endOf("month").add(1, "month").startOf("day"));
+              return $scope.range = $scope.selection ? (start = $scope.selection.start.clone().startOf("month").startOf("day"), end = start.clone().add(0, "months").endOf("month").startOf("day"), moment().range(start, end)) : moment().range(moment().startOf("month").subtract(1, "month").startOf("day"), moment().endOf("month").add(1, "month").startOf("day"));
             } else {
               $scope.selection = false;
               $scope.selection = $scope.model || false;
@@ -210,7 +210,7 @@
               }
             }
             if ($scope.showRanged) {
-              $scope.range = moment().range($scope.range.start.add(n, 'months').startOf("month").startOf("day"), $scope.range.start.clone().add(2, "months").endOf("month").startOf("day"));
+              $scope.range = moment().range($scope.range.start.add(n, 'months').startOf("month").startOf("day"), $scope.range.start.clone().add(0, "months").endOf("month").startOf("day"));
             } else {
               $scope.date.add(n, 'months');
               $scope.range = moment().range(moment($scope.date).startOf("month"), moment($scope.date).endOf("month"));
